@@ -7,7 +7,7 @@ TOOLS = "pan,wheel_zoom,reset,hover,save"
 
 class BokehPlot:
     def __init__(self, file_name: str) -> None:
-        output_file(file_name, mode="inline")
+        output_file(file_name)
         self.p = figure(title="Распределение слов по длине",
                         x_axis_label='длина слова (букв)',
                         y_axis_label='количество слов (%)',

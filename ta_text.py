@@ -38,7 +38,7 @@ class TaText:
 
     def __init__(self,
                  text: str,
-                 author: Author = Author("John", "S", "Doe"),
+                 author: Author = Author("Пушкин", "Александр", "Сергеевич"),
                  title: str = "Unknown title",
                  published: date = date(1, 1, 1),
                  file_name: str = None,
@@ -66,8 +66,11 @@ class TaText:
             text = file.read()
             return TaText(text, file_name=file_name)
 
+    def __str__(self) -> str:
+        return f"{self.author}: {self.title}"
+
     def __repr__(self) -> str:
-        return f"{self.__class__.__name__}({self.author}: {self.title})"
+        return f"{self.__class__.__name__}({self.__str__()})"
 
     def __eq__(self, other: TaText) -> bool:
         return self.hash == other.hash

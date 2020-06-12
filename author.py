@@ -23,9 +23,9 @@ class Author:
 
     def __str__(self):
         if self.patronymic:
-            return f"{self.name[0]}.{self.patronymic[0]}. {self.surname}"
+            return f"{self.surname} {self.name} {self.patronymic}"
         else:
-            return f"{self.name[0]}. {self.surname}"
+            return f"{self.surname} {self.name}"
 
     def __repr__(self):
         return f"{self.__class__.__name__}({self})"
